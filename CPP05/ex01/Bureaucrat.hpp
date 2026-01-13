@@ -6,7 +6,7 @@
 /*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 20:28:04 by nour              #+#    #+#             */
-/*   Updated: 2026/01/13 21:45:35 by nour             ###   ########.fr       */
+/*   Updated: 2026/01/13 21:46:59 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "fstream"
 # include "iomanip"
 # include "cstdlib"
+# include "Form.hpp"
 
 class Bureaucrat
 {
@@ -26,10 +27,11 @@ class Bureaucrat
 
     public:
 	Bureaucrat();
-	~Bureaucrat();
+	virtual ~Bureaucrat();
 	Bureaucrat(std::string n, int g);
 	Bureaucrat &operator=(const Bureaucrat &other);
 	Bureaucrat(const Bureaucrat &other);
+	void	signForm(Form *form);
 
 	std::string const getName() const;
 	int getGrade() const;
