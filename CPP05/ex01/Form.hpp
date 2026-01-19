@@ -6,7 +6,7 @@
 /*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 20:28:04 by nour              #+#    #+#             */
-/*   Updated: 2026/01/14 12:12:29 by nour             ###   ########.fr       */
+/*   Updated: 2026/01/19 14:47:59 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@
 # include "iomanip"
 # include "cstdlib"
 
+class Bureaucrat;
+
 class Form
 {
     private:
     std::string const	name;
-	bool				sign;
-	const int			to_sign;
-	const int			to_ex;
+	bool				is_signed;
+	const int			sign_grade;
+	const int			ex_grade;
 
     public:
 	Form();
@@ -35,9 +37,10 @@ class Form
 
 	std::string const getName() const;
 	bool		getSigned() const;
-	const int	getSign() const;
-	const int	getEx() const;
+	int getSign() const;
+	int	getEx() const;
 
+	int		beSigned(Bureaucrat *b);
 	
 	class GradeTooHighException : public std::exception
 	{

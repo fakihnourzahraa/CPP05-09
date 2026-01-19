@@ -6,7 +6,7 @@
 /*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 11:08:12 by nour              #+#    #+#             */
-/*   Updated: 2026/01/13 21:41:27 by nour             ###   ########.fr       */
+/*   Updated: 2026/01/19 14:58:11 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,17 @@ void	Bureaucrat::decrementBureau()
         this->grade = this->grade + 1;
     else
         std::cout << "Grade too low" << std::endl;
+}
+
+void    Bureaucrat::signForm(Form &f)
+{
+    try
+    {
+        f.beSigned(this);
+         std:: cout << this->name << " signed " << f.getName() << std::endl;
+    }
+    catch (std::exception & e)
+    {
+        std::cout << this->name << " couldn't signed " << f.getName() << e.what() << std::endl;
+    }
 }

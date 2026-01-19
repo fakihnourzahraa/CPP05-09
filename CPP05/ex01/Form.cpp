@@ -6,16 +6,16 @@
 /*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 21:47:28 by nour              #+#    #+#             */
-/*   Updated: 2026/01/14 12:13:02 by nour             ###   ########.fr       */
+/*   Updated: 2026/01/19 14:53:46 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Form.hpp"
+# include "Bureaucrat.hpp"
 
-
-Form::Form() : name("Default"), to_sign(75), to_ex(75)
+Form::Form() : name("Default"), sign_grade(75), ex_grade(75)
 {
-    this->sign = false;
+    this->is_signed = false;
 	std::cout << "Default Form constructor called" << std::endl;
 }
 
@@ -34,17 +34,19 @@ const char* Form::GradeTooLowException::what() const throw()
     return "Form::GradeTooLowException";
 }
 
-Form::Form(std::string n, int sign, int ex) : name(n), to_sign(sign), to_ex(ex)
+Form::Form(std::string n, int sign, int ex) : name(n), sign_grade(sign), ex_grade(ex)
 {
     if (sign > 150 || ex > 150)
         throw GradeTooLowException();
     if (sign < 1 || ex < 1)
         throw GradeTooHighException();
+    this->is_signed = false;
     std::cout << "Form constructor called" << std::endl;
 }
 
-Form::Form(const Form &other) : name(other.name), to_sign(other.to_sign), to_ex(other.to_ex)
+Form::Form(const Form &other) : name(other.name), sign_grade(other.sign_grade), ex_grade(other.ex_grade)
 {
+    this->is_signed = other.is_signed;
     std::cout << "Form copy constructor is called" <<std::endl;
 }
 
@@ -62,23 +64,35 @@ std::string const Form::getName() const
 {
     return (this->name);
 }
-const int Form::getEx() const
+int Form::getEx() const
 {
-    return (this->to_ex);
+    return (this->ex_grade);
 }
 
-const int Form::getSign() const
+int Form::getSign() const
 {
-    return (this->to_sign);
+    return (this->sign_grade);
 }
 
 bool Form::getSigned() const
 {
-    return (this->to_sign);
+    return (this->is_signed);
 }
 
 std::ostream    &operator<<(std::ostream &out, const Form &Form)
 {
-    out << Form.getName() << ", Form signed?  " << Form.getSigned() << ", Form to sign " << Form.getSign() << " , Form to execute" << Form.getEx() << std::endl;
+    out << Form.getName() << ", Form signed?  " << Form.getSigned() << ", Form to sign " << Form.getSign() << ", Form to execute " << Form.getEx() << std::endl;
     return (out);
+}
+
+int    Form::beSigned(Bureaucrat *b)
+{
+    if (b->getGrade() <= this->sign_grade)
+    {
+        this->is_signed = true;
+        return (1);
+    }
+    else
+        throw GradeTooLowException();
+    return (0);
 }
