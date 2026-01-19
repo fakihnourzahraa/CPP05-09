@@ -6,7 +6,7 @@
 /*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 20:28:04 by nour              #+#    #+#             */
-/*   Updated: 2026/01/13 21:49:02 by nour             ###   ########.fr       */
+/*   Updated: 2026/01/14 12:12:29 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ class Form
     public:
 	Form();
 	~Form();
-	Form(std::string n, int g);
+	Form(std::string n, int sign, int ex);
 	Form &operator=(const Form &other);
 	Form(const Form &other);
 
 	std::string const getName() const;
-	bool		getSign() const;
-	const int	to_sign() const;
-	const int	to_ex() const;
+	bool		getSigned() const;
+	const int	getSign() const;
+	const int	getEx() const;
 
 	
 	class GradeTooHighException : public std::exception
