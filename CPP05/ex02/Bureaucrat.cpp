@@ -6,7 +6,7 @@
 /*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 11:08:12 by nour              #+#    #+#             */
-/*   Updated: 2026/01/19 16:08:05 by nour             ###   ########.fr       */
+/*   Updated: 2026/01/19 16:12:46 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,15 +89,30 @@ void	Bureaucrat::decrementBureau()
         std::cout << "Grade too low" << std::endl;
 }
 
-void    Bureaucrat::signForm(Form &f)
+void    Bureaucrat::signForm(AForm &f)
 {
     try
     {
         f.beSigned(this);
-        std:: cout << this->name << " signed " << f.getName() << std::endl;
+         std:: cout << this->name << " signed " << f.getName() << std::endl;
     }
     catch (std::exception & e)
     {
         std::cout << this->name << " couldn't sign " << f.getName() << e.what() << std::endl;
     }
+}
+
+void Bureaucrat::executeForm(AForm &form) const
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << this->getName() << " executed " << form.getName() << std::endl;
+    
+    }
+    catch (std::exception & e)
+    {
+        std::cout << this->name << " couldn't execute " << form.getName() << e.what() << std::endl;
+    }
+    
 }
