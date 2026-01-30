@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 21:47:28 by nour              #+#    #+#             */
-/*   Updated: 2026/01/19 14:53:46 by nour             ###   ########.fr       */
+/*   Updated: 2026/01/30 17:34:14 by nfakih           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,11 @@ bool Form::getSigned() const
 
 std::ostream    &operator<<(std::ostream &out, const Form &Form)
 {
-    out << Form.getName() << ", Form signed?  " << Form.getSigned() << ", Form to sign " << Form.getSign() << ", Form to execute " << Form.getEx() << std::endl;
+	std::string h = "false";
+	
+	if (Form.getSigned())
+		h = "true";
+    out << Form.getName() << ", Form signed?  " << h << ", Form to sign " << Form.getSign() << ", Form to execute " << Form.getEx() << std::endl;
     return (out);
 }
 
