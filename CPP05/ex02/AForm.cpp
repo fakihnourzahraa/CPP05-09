@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 21:47:28 by nour              #+#    #+#             */
-/*   Updated: 2026/01/19 16:10:18 by nour             ###   ########.fr       */
+/*   Updated: 2026/02/03 15:54:15 by nfakih           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ AForm::AForm() : name("Default"), sign_grade(75), ex_grade(75)
 
 AForm::~AForm()
 {
-	std::cout << name << "AForm destructor called" << std::endl;
+	std::cout << name << " AForm destructor called" << std::endl;
 }
 
 const char* AForm::GradeTooHighException::what() const throw() 
@@ -81,7 +81,7 @@ bool AForm::getSigned() const
 
 std::ostream    &operator<<(std::ostream &out, const AForm &AForm)
 {
-    out << AForm.getName() << ", AForm signed?  " << AForm.getSigned() << ", AForm to sign " << AForm.getSign() << ", AForm to execute " << AForm.getEx() << std::endl;
+    out << AForm.getName() << ", AForm signed? " << AForm.getSigned() << ", AForm to sign " << AForm.getSign() << ", AForm to execute " << AForm.getEx() << std::endl;
     return (out);
 }
 

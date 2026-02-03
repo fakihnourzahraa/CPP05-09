@@ -6,7 +6,7 @@
 /*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 13:47:46 by nfakih            #+#    #+#             */
-/*   Updated: 2026/01/30 18:20:58 by nfakih           ###   ########.fr       */
+/*   Updated: 2026/02/03 16:01:39 by nfakih           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int main()
         
         std::cout << alice << std::endl;
         std::cout << shrubForm << std::endl;
-        
 
         alice.signForm(shrubForm);
         std::cout << shrubForm << std::endl;
@@ -36,7 +35,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-
+	std::cout << std::endl;
     try
     {
         Bureaucrat bob("Bob", 145);
@@ -53,7 +52,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-
+	std::cout << std::endl;
     try
     {
         Bureaucrat ceo("CEO", 1);
@@ -68,7 +67,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-
+	std::cout << std::endl;
     std::cout << "\nRobotomyRequestForm \n" << std::endl;
     try
     {
@@ -91,7 +90,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-
+	std::cout << std::endl;
     try
     {
         Bureaucrat intern("Intern", 72);
@@ -108,7 +107,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-
+	std::cout << std::endl;
     try
     {
         Bureaucrat president("President", 1);
@@ -124,7 +123,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-
+	std::cout << std::endl;
     try
     {
         Bureaucrat manager("Manager", 30);
@@ -141,7 +140,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-
+	std::cout << std::endl;
     try
     {
         Bureaucrat signer("Signer", 5);
@@ -160,7 +159,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-
+	std::cout << std::endl;
     try
     {
         Bureaucrat b1("B1", 145);
@@ -174,6 +173,6 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-
+	std::cout << std::endl;
     return 0;
 }
