@@ -4,35 +4,29 @@ _This project has been created as part of the 42 curriculum by nfakih._
 
 ## Description
 
-CPP Module 05 focuses on **exception handling in C++**. The goal of this module is to understand how to properly handle errors and exceptional situations using C++'s try-catch mechanism and to create custom exception classes.
+CPP Module 05 focuses on **exception handling in C++**. The goal of this module is to understand how to properly handle errors and exceptions using the try-catch mechanism and creating your own.
 
 **Key concepts:**
 - Exception handling (try, catch, throw)
-- Custom exception classes as nested classes
 - Abstract base classes and polymorphism
 
 ## Instructions
 
-### Compilation
-
-Each exercise contains a Makefile with the following rules:
+Clone the repo using
+```bash
+git clone ..
+```
+Then compile within each directory using
 ```bash
 make        # Compile the program
 make clean  # Remove object files
 make fclean # Remove object files and executable
 make re     # Recompile from scratch
 ```
-
-**Compilation flags:** `-Wall -Wextra -Werror -std=c++98`
-
-### Execution
-
-Each exercise produces an executable that can be run to test the implementation:
+And lastly run the executable file
 ```bash
-./bureaucrat  # Or the name specified in the exercise
+./file_name
 ```
-
-The program will run test cases demonstrating exception handling, form signing, and execution.
 
 ### Project Structure
 
@@ -94,45 +88,17 @@ Create an `Intern` class with:
 - Returns pointer to created form
 - Handles unknown form names gracefully
 
-### Implementation Details
-
-**Exception Handling Example:**
-```cpp
-try
-{
-    Bureaucrat bob("Bob", 0);
-}
-catch (std::exception& e)
-{
-    std::cerr << e.what() << std::endl;
-}
-```
-
-**Orthodox Canonical Form:**
-All classes must implement:
-- Default constructor
-- Copy constructor
-- Copy assignment operator
-- Destructor
-
-**Abstract Classes:**
-Use pure virtual functions:
-
-```cpp
-class AForm
-{
-    public:
-        virtual void execute(Bureaucrat const & executor) const = 0;
-};
-```
 
 ## Resources
 
-**Classic References:**
-- https://riceset.com/C++/The-Orthodox-Canonical-Class-Form - Orthodox Canonical Class Form explanation
-- https://www.ibm.com/docs/en/i/7.4.0?topic=only-abstract-classes-c - IBM documentation on abstract classes
-- https://www.geeksforgeeks.org/cpp/virtual-function-cpp/ - Virtual functions in C++
-- https://cplusplus.com/doc/tutorial/exceptions/ - C++ exception handling tutorial
+**References:**
+- https://riceset.com/C++/The-Orthodox-Canonical-Class-Form 
+- https://www.ibm.com/docs/en/i/7.4.0?topic=only-abstract-classes-c
+- https://www.geeksforgeeks.org/cpp/virtual-function-cpp/
+- https://cplusplus.com/doc/tutorial/exceptions/ 
 
 **AI Usage:**
-No AI tools were used in the development of this project. All code was written manually following the 42 curriculum requirements and subject guidelines.
+- AI tools were used to help create clear and diverse test cases
+- Help with summarizing for ReadMe and formatting
+
+*Made with lots coffee and debugging at 42 Beirut*
