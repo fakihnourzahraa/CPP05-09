@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 20:28:04 by nour              #+#    #+#             */
-/*   Updated: 2026/01/19 14:51:35 by nour             ###   ########.fr       */
+/*   Updated: 2026/02/03 15:32:32 by nfakih           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ class Bureaucrat
 
     public:
 	Bureaucrat();
-	virtual ~Bureaucrat();
+	~Bureaucrat();
 	Bureaucrat(std::string n, int g);
 	Bureaucrat &operator=(const Bureaucrat &other);
 	Bureaucrat(const Bureaucrat &other);
-	void	signForm(Form &form);
 
 	std::string const getName() const;
-	int getGrade() const;
-	void	incrementBureau();
-	void	decrementBureau();
+	int 			getGrade() const;
+	void			incrementBureau();
+	void			decrementBureau();
+	void    		signForm(Form &f);
 	class GradeTooHighException : public std::exception
 	{
 		public:

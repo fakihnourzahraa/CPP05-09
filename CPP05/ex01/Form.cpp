@@ -6,7 +6,7 @@
 /*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 21:47:28 by nour              #+#    #+#             */
-/*   Updated: 2026/01/30 17:34:14 by nfakih           ###   ########.fr       */
+/*   Updated: 2026/02/03 15:49:31 by nfakih           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Form::Form() : name("Default"), sign_grade(75), ex_grade(75)
 
 Form::~Form()
 {
-	std::cout << name << "Form destructor called" << std::endl;
+	std::cout << name << " form destructor called" << std::endl;
 }
 
 const char* Form::GradeTooHighException::what() const throw() 
@@ -57,6 +57,7 @@ Form  &Form::operator=(const Form &other)
     {
         return *this;
     }
+	this->is_signed = other.is_signed;
     return (*this);
 }
 

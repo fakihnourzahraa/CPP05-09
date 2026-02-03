@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 11:08:12 by nour              #+#    #+#             */
-/*   Updated: 2026/01/19 16:08:05 by nour             ###   ########.fr       */
+/*   Updated: 2026/02/03 15:33:09 by nfakih           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int Bureaucrat::getGrade() const
 
 std::ostream    &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 {
-    out << bureaucrat.getName() << ", bureaucrat grade  " << bureaucrat.getGrade() << std::endl;
+    out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << std::endl;
     return (out);
 }
 void	Bureaucrat::incrementBureau()
@@ -79,16 +79,15 @@ void	Bureaucrat::incrementBureau()
     if (this->grade > 1)
         this->grade = this->grade - 1;
     else
-        std::cout << "Grade too high" << std::endl;
+        throw GradeTooHighException();
 }
 void	Bureaucrat::decrementBureau()
 {
     if (this->grade < 150)
         this->grade = this->grade + 1;
-    else
-        std::cout << "Grade too low" << std::endl;
+	else
+		throw GradeTooLowException();
 }
-
 void    Bureaucrat::signForm(Form &f)
 {
     try
