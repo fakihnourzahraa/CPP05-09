@@ -6,7 +6,7 @@
 /*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 13:47:46 by nfakih            #+#    #+#             */
-/*   Updated: 2026/01/30 16:17:46 by nfakih           ###   ########.fr       */
+/*   Updated: 2026/02/03 15:30:02 by nfakih           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 int main()
 {
-    std::string const n = "Nour";
-
     try
 	{
-		Bureaucrat hi("A", 151);
-        hi.incrementBureau();
-		std::cout << hi << std::endl;
+		Bureaucrat obj("A", 151);
+        obj.incrementBureau();
+		std::cout << obj << std::endl;
 	}
 	catch (const std::exception &e)
 	{
@@ -29,9 +27,9 @@ int main()
 	std::cout << std::endl;
     try
 	{
-		Bureaucrat hi("B", 150);
-        hi.incrementBureau();
-		std::cout << hi << std::endl;
+		Bureaucrat obj("B", 150);
+        obj.decrementBureau();
+		std::cout << obj << std::endl;
 	}
 	catch (const std::exception &e)
 	{
@@ -39,9 +37,10 @@ int main()
 	}
     try
 	{
-		Bureaucrat hi("C", 140);
-        hi.decrementBureau();
-		std::cout << hi << std::endl;
+		Bureaucrat obj("C", 140);
+		std::cout << "Before: " << obj << std::endl;
+        obj.incrementBureau();
+		std::cout << "After: " << obj << std::endl;
 	}
 	catch (const std::exception &e)
 	{

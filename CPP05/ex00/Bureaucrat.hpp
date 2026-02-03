@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 20:28:04 by nour              #+#    #+#             */
-/*   Updated: 2026/01/13 21:45:35 by nour             ###   ########.fr       */
+/*   Updated: 2026/02/03 15:23:03 by nfakih           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ class Bureaucrat
 	Bureaucrat(const Bureaucrat &other);
 
 	std::string const getName() const;
-	int getGrade() const;
-	void	incrementBureau();
-	void	decrementBureau();
+	int 			getGrade() const;
+	void			incrementBureau();
+	void			decrementBureau();
+
 	class GradeTooHighException : public std::exception
 	{
 		public:
