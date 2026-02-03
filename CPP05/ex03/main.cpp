@@ -6,7 +6,7 @@
 /*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 13:47:46 by nfakih            #+#    #+#             */
-/*   Updated: 2026/01/30 18:29:01 by nfakih           ###   ########.fr       */
+/*   Updated: 2026/02/03 16:21:33 by nfakih           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,33 +17,29 @@
 # include "PresidentialPardonForm.hpp"
 # include "Intern.hpp"
 
-
 int main()
 {
 
     std::cout << "\nIntern creates ShrubberyCreationForm\n" << std::endl;
     {
         Intern someRandomIntern;
-        AForm* form = NULL;
         
         try
         {
-            form = someRandomIntern.makeForm("ShrubberyCreationForm", "home");
+            AForm *form = someRandomIntern.makeForm("ShrubberyCreationForm", "home");
+			Bureaucrat bob("Bob", 137);
+            std::cout << *form << std::endl;
+            bob.signForm(*form);
+            bob.executeForm(*form);
+            delete form;
         }
         catch (std::exception &e)
         {
             std::cout << e.what() << std::endl;
         }
         
-        if (form)
-        {
-            Bureaucrat bob("Bob", 137);
-            std::cout << *form << std::endl;
-            bob.signForm(*form);
-            bob.executeForm(*form);
-            delete form;
-        }
     }
+	std::cout << std::endl;
 
     std::cout << "\nIntern creates RobotomyRequestForm\n" << std::endl;
     {
@@ -70,7 +66,7 @@ int main()
             delete rrf;
         }
     }
-
+	std::cout << std::endl;
     std::cout << "\nIntern creates PresidentialPardonForm\n" << std::endl;
     {
         Intern someRandomIntern;
@@ -94,8 +90,8 @@ int main()
             delete ppf;
         }
     }
+	std::cout << std::endl;
 
-    std::cout << "\nIntern tries to create non-existent form\n" << std::endl;
     {
         Intern someRandomIntern;
         AForm* form = NULL;
@@ -112,29 +108,6 @@ int main()
         if (form)
             delete form;
     }
-
-    std::cout << "\nThe subject's example\n" << std::endl;
-    {
-        Intern someRandomIntern;
-        AForm* rrf = NULL;
-        
-        try
-        {
-            rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
-        }
-        catch (std::exception &e)
-        {
-            std::cout << e.what() << std::endl;
-        }
-        
-        if (rrf)
-        {
-            Bureaucrat executor("Executor", 1);
-            executor.signForm(*rrf);
-            executor.executeForm(*rrf);
-            delete rrf;
-        }
-    }
-
+	std::cout << std::endl;
 	return (0);
 }

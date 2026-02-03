@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 11:08:12 by nour              #+#    #+#             */
-/*   Updated: 2026/01/19 16:31:29 by nour             ###   ########.fr       */
+/*   Updated: 2026/02/03 16:20:27 by nfakih           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Intern::Intern()
 
 Intern::~Intern()
 {
-	std::cout << " Intern destructor called" << std::endl;
+	std::cout << "Intern destructor called" << std::endl;
 }
 
 const char* Intern::FormNonExistentException::what() const throw()
@@ -42,14 +42,26 @@ Intern  &Intern::operator=(const Intern &other)
     }
     return (*this);
 }
+
 AForm *Intern::makeForm(std::string first, std::string second)
 {
-    if (first == "ShrubberyCreationForm")
-        return new ShrubberyCreationForm(second);
-    else if (first == "PresidentialPardonForm")
-        return new PresidentialPardonForm(second);
-    else if (first == "RobotomyRequestForm")
-        return new RobotomyRequestForm(second);
-    else
-        throw FormNonExistentException();
+	std::string levels[] = {"ShrubberyCreationForm", "PresidentialPardonForm", "RobotomyRequestForm"};
+	int c;
+	c = -1;
+	for (int i = 0; i < 3; i++)
+	{
+		if (levels[i] == first)
+			c = i;
+	}
+	switch (c)
+	{
+		case 0:
+			return new ShrubberyCreationForm(second);
+		case 1:
+			return new PresidentialPardonForm(second);
+		case 2:
+			return new RobotomyRequestForm(second);
+		default:
+			throw FormNonExistentException();
+	}
 }
