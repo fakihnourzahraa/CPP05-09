@@ -6,7 +6,7 @@
 /*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 13:03:17 by nour              #+#    #+#             */
-/*   Updated: 2026/09/13 13:04:09 by nour             ###   ########.fr       */
+/*   Updated: 2026/09/13 15:11:45 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,23 @@
 # include <cstdlib>
 # include <ctime>
 # include "Serializer.hpp"
-int main(int argc, char **argv)
+
+int main(void)
 {
-    if (argc != 2)
-    {
-        std::cout <<"INVALID"<<std::endl;
-        return 0;
-    }
-    ScalarConverter::convert(argv[1]);
+    Data pre;
+    pre.id = 42;
+    pre.label = "hi";
+    pre.val = 5;
+
+    Data *prePtr = &pre;
+
+    uintptr_t raw = Serializer::serialize(prePtr);
+    std::cout << "Serialized: " << raw << std::endl;
+
+    Data *post = Serializer::deserialize(raw);
+    std::cout << "Deserialized: " << post << std::endl;
+
+    std::cout << "id=" << post->id << " label=" << post->label<< " value=" << post->val << std::endl;
+
     return 0;
 }
