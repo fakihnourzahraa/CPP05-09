@@ -6,7 +6,7 @@
 /*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 21:47:28 by nour              #+#    #+#             */
-/*   Updated: 2026/09/13 12:57:05 by nour             ###   ########.fr       */
+/*   Updated: 2026/09/13 13:00:22 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,6 @@ void ScalarConverter::isFloat(conv a)
     {
         if (rawNum[j] == '.')
         {
-            if (dot)
                 dot++;
         }
         else if (!isdigit(rawNum[j]))
@@ -138,8 +137,13 @@ void ScalarConverter::isDouble(conv a)
     {
         if (a.literal[j] == '.')
         {
-            if (dot)
+            if (a.literal[j+1] && (a.literal[j+1] >= '0' && a.literal[j+1]<= '9'))
                 dot++;
+            else
+            {
+                std::cout <<"Invalid Usage"<<std::endl;
+                return ;
+            }
         }
         else if (!isdigit(a.literal[j]))
             ans = false;
