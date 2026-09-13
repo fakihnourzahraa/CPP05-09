@@ -7,7 +7,7 @@ int main(int argc, char **argv)
 {
     if (argc != 2)
     {
-        std::cout <<"INVALID"<<std::endl;
+        std::cout <<"Invalid Input"<<std::endl;
         return 0;
     }
     ScalarConverter::convert(argv[1]);

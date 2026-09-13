@@ -24,6 +24,7 @@
 # include <cmath>
 # include <cerrno>
 # include <iomanip>
+# include <cfloat>
 
 class ScalarConverter
 {
