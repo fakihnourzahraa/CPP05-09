@@ -1,6 +1,6 @@
-NAME = Serializer
+NAME = Base
 
-SRC = Serializer.cpp main.cpp
+SRC = Base.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CC  = c++ -Wall -Werror -Wextra -std=c++98

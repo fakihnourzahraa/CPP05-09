@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 13:03:17 by nour              #+#    #+#             */
-/*   Updated: 2026/09/13 16:16:39 by nour             ###   ########.fr       */
+/*   Updated: 2026/09/13 17:40:26 by nfakih           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,51 @@
 Base *generate(void)
 {
     srand(time(0));
+
     int num = (rand() % 3) + 1;
     if (num == 1)
-        A *a();
-    
+	{
+		std::cout <<"A generated"<<std::endl;
+		Base *a = new A();
+		return a;
+	}
+	else if (num == 2)
+	{
+				std::cout <<"B generated"<<std::endl;
+		Base *a = new B();
+		return a;
+	}		std::cout <<"C generated"<<std::endl;
+		Base *a = new C();
+		return a;
+}
+void identify(Base *p)
+{
+	Base *a = dynamic_cast<A*>(p);
+	if (a)
+	{
+		std::cout <<"Pointer is A"<<std::endl;
+		delete a;
+		return ;
+	}
+	Base *b = dynamic_cast<B*>(p);
+	if (b)
+	{
+		std::cout <<"Pointer is B"<<std::endl;
+		delete b;
+		return ;
+	}
+	Base *c = dynamic_cast<C*>(p);
+	if (c)
+	{
+		std::cout <<"Pointer is C"<<std::endl;
+		delete c;
+		return ;
+	}
 }
 
 int main(void)
 {
-
-    uintptr_t raw = Serializer::serialize(prePtr);
-    std::cout << "Serialized: " << raw << std::endl;
-
-    Data *post = Serializer::deserialize(raw);
-    std::cout << "Deserialized: " << post << std::endl;
-
-    std::cout << "id=" << post->id << " label=" << post->label<< " value=" << post->val << std::endl;
+	identify(generate());
 
     return 0;
 }
