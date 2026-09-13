@@ -1,6 +1,6 @@
-NAME = Bureaucrat
+NAME = ScalarConverter
 
-SRC = Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp main.cpp
+SRC = ScalarConverter.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CC  = c++ -Wall -Werror -Wextra -std=c++98

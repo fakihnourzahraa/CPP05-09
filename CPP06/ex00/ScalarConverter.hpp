@@ -27,13 +27,13 @@
 #include <iomanip>
 struct conv
 {
-    std::string literal = "";
-    bool error = false;
-    char c = '\0';
-    int i = 0;
-    float f = 0;
-    double d = 0;
-    std::string s = "";
+    std::string literal;
+    bool error;
+    char c;
+    int i;
+    float f;
+    double d;
+    std::string s;
 };
 class ScalarConverter
 {
@@ -42,7 +42,7 @@ class ScalarConverter
 	~ScalarConverter();
 	ScalarConverter &operator=(const ScalarConverter &other);
 	ScalarConverter(const ScalarConverter &other);
-    static bool  ScalarConverter::isChar(conv a);
+    static void  isChar(conv a);
     static void isInt(conv a);
     static void isFloat(conv a);
     static void isDouble(conv a);

@@ -2,10 +2,14 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-
-int main()
+# include "ScalarConverter.hpp"
+int main(int argc, char **argv)
 {
-
-    std::cout << std::stoi("5.5") << std::endl;
+    if (argc != 2)
+    {
+        std::cout <<"INVALID"<<std::endl;
+        return 0;
+    }
+    ScalarConverter::convert(argv[1]);
     return 0;
 }
