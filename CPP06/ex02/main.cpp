@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 13:03:17 by nour              #+#    #+#             */
-/*   Updated: 2026/09/13 17:52:59 by nfakih           ###   ########.fr       */
+/*   Updated: 2026/09/14 18:41:03 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 
 Base *generate(void)
 {
-    srand(time(0));
 
-    int num = (rand() % 3) + 1;
+	int num =0;
+     num = (rand() % 3) + 1;
     if (num == 1)
 	{
 		std::cout <<"A generated"<<std::endl;
@@ -63,58 +63,53 @@ void identify(Base *p)
 
 void identify(Base &p)
 {
-	bool r = false;
 	try 
 	{
-		Base *a = dynamic_cast<A*>(&p);
+		Base &a = dynamic_cast<A&>(p);
+		std::cout << "Pointer is A"<<std::endl;
 		(void) a;
+		return;
 	}
 	catch (const std::exception& e)
 	{	
-		r = true;
 	}
-	if (r == false)
-	{
-		std::cout << "Pointer is A";
-		return ;
-	}
+
 	
 	try 
 	{
-		Base *a = dynamic_cast<B*>(&p);
+		Base &a = dynamic_cast<B&>(p);
+			std::cout << "Pointer is B"<<std::endl;
 		(void) a;
+		return;
 	}
 	catch (const std::exception& e)
 	{	
-		r = true;
 	}
-	if (r == false)
-	{
-		std::cout << "Pointer is B";
-		return ;
-	}
+
 	
 	try 
 	{
-		Base *a = dynamic_cast<C*>(&p);
+		Base &a = dynamic_cast<C&>(p);
+		std::cout << "Pointer is C"<<std::endl;
 		(void) a;
+		return ;
 	}
 	catch (const std::exception& e)
 	{	
-		r = true;
 	}
-	if (r == false)
-	{
-		std::cout << "Pointer is C";
-		return ;
-	}
+
 }
 
 int main(void)
 {
-	Base *a = generate();
-	identify(a);
-	identify(&*a);
+	    srand(time(0));
+	for (int i = 0; i < 10; i++)
+	{
+		Base *a = generate();
+		identify(a);
+		identify(*a);
+		a = NULL;
+	}
 
     return 0;
 }

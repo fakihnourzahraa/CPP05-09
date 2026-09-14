@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 21:47:28 by nour              #+#    #+#             */
-/*   Updated: 2026/09/13 18:36:53 by nfakih           ###   ########.fr       */
+/*   Updated: 2026/09/14 18:08:14 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,10 +219,10 @@ void ScalarConverter::convertFromDouble(const std::string& literal)
         std::cout << "int: impossible" << std::endl;
     else
         std::cout << "int: " << static_cast<int>(val) << std::endl;
-    if (val > FLT_MAX || val < FLT_MIN)
-    	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(val) << "f" << std::endl;
+    if (val > FLT_MAX || val < -FLT_MAX)
+        std::cout << "float: impossible" << std::endl;
     else
-    	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(val) << "f" << std::endl;
+        std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(val) << "f" << std::endl;
     // CHECK ME flt decimal ./ScalarConverter 340282122.1 
     std::cout << "double: " << std::fixed << std::setprecision(1) << val << std::endl;
 }
