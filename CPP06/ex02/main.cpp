@@ -6,7 +6,7 @@
 /*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 13:03:17 by nour              #+#    #+#             */
-/*   Updated: 2026/09/19 12:02:43 by nfakih           ###   ########.fr       */
+/*   Updated: 2026/09/19 12:10:49 by nfakih           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,19 @@ Base *generate(void)
 void identify(Base *p)
 {
 	Base *a = dynamic_cast<A*>(p);
-	if (a)
+	if (a != NULL)
 	{
 		std::cout <<"Pointer is A"<<std::endl;
 		return ;
 	}
 	Base *b = dynamic_cast<B*>(p);
-	if (b)
+	if (b != NULL)
 	{
 		std::cout <<"Pointer is B"<<std::endl;
 		return ;
 	}
 	Base *c = dynamic_cast<C*>(p);
-	if (c)
+	if (c != NULL)
 	{
 		std::cout <<"Pointer is C"<<std::endl;
 		return ;
