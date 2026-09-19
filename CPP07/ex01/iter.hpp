@@ -6,7 +6,7 @@
 /*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 13:03:11 by nour              #+#    #+#             */
-/*   Updated: 2026/09/19 15:14:02 by nour             ###   ########.fr       */
+/*   Updated: 2026/09/19 15:25:05 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define ITER_HPP
 # include <string>
 
-template <typename T> void iter(T arr[], const int len, void (*func)(T&))
+template <typename T, typename args> void iter(T arr[], const int len, void (*func)(args))
 {
     for (int i = 0; i < len; i++)
     {
