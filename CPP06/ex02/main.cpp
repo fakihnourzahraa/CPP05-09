@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 13:03:17 by nour              #+#    #+#             */
-/*   Updated: 2026/09/14 18:41:03 by nour             ###   ########.fr       */
+/*   Updated: 2026/09/19 12:02:43 by nfakih           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ int main(void)
 		Base *a = generate();
 		identify(a);
 		identify(*a);
+		delete a;
 		a = NULL;
 	}
 
