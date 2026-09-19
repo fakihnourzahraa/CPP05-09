@@ -38,7 +38,6 @@ class ScalarConverter
     static void isFloat(const std::string& literal);
     static void isDouble(const std::string& literal);
     static void lToStruct(const std::string& literal);
-    static void convertFromChar(const std::string& literal);
     static void convertFromInt(const std::string& literal);
     static void convertFromFloat(const std::string& literal);
     static void convertFromDouble(const std::string& literal);

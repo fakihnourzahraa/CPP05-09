@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 21:47:28 by nour              #+#    #+#             */
-/*   Updated: 2026/09/14 18:08:14 by nour             ###   ########.fr       */
+/*   Updated: 2026/09/19 11:44:44 by nfakih           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,11 @@ void ScalarConverter::isFloat(const std::string& literal)
         isDouble(literal);
         return ;
     }
+	if (literal[literal.length() - 2] == '.')
+	{
+		std::cout << "Invalid Usage" << std::endl;
+        return ;
+	}
     bool ans = true;
     std::string rawNum = literal.substr(0, literal.length() - 1);
     int i = 0;
@@ -101,7 +106,7 @@ void ScalarConverter::isFloat(const std::string& literal)
     {
         if (rawNum[j] == '.')
         {
-                dot++;
+            dot++;
         }
         else if (!isdigit(rawNum[j]))
             ans = false;
