@@ -6,29 +6,31 @@
 /*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 13:03:11 by nour              #+#    #+#             */
-/*   Updated: 2026/09/19 16:10:11 by nour             ###   ########.fr       */
+/*   Updated: 2026/09/20 10:47:47 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP 
 # define ARRAY_HPP
 # include <string>
+# include <ctime>
+# include <cstdlib>
 
 template <typename T>
 class Array{
     private:
-        T dt;
+        T *arr;
         int len;
-        T *arr[];
     
     public:
         Array();
         Array(unsigned int n);
         ~Array();
         Array &operator=(const Array &other);
-        T operator[](int);
+        T &operator[](int);
+        const T &operator[](int) const;
         Array(const Array &other); 
-        int size();
+        int size() const;
         
     class OutOfBoundsException : public std::exception {
         public:

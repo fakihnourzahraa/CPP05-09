@@ -6,12 +6,15 @@
 /*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 15:31:55 by nour              #+#    #+#             */
-/*   Updated: 2026/09/19 15:44:49 by nour             ###   ########.fr       */
+/*   Updated: 2026/09/20 10:30:33 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <iostream>
-# include <Array.hpp>
+# include "Array.hpp"
+# include "Array.tpp"
+# include <ctime>
+# include <cstdlib>
 
 #define MAX_VAL 750
 int main(int, char**)
