@@ -1,4 +1,4 @@
-NAME = w
+NAME = whatever
 
 SRC =  main.cpp
 OBJ = $(SRC:.cpp=.o)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 15:31:55 by nour              #+#    #+#             */
-/*   Updated: 2026/09/20 10:30:33 by nour             ###   ########.fr       */
+/*   Updated: 2026/09/20 17:53:15 by nfakih           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <ctime>
 # include <cstdlib>
 
-#define MAX_VAL 750
+# define MAX_VAL 750
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -63,6 +63,6 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
-    delete [] mirror;//
+    delete [] mirror;
     return 0;
 }
