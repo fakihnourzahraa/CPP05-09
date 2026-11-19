@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 14:11:08 by nour              #+#    #+#             */
-/*   Updated: 2026/09/20 17:47:28 by nfakih           ###   ########.fr       */
+/*   Updated: 2026/11/19 13:20:51 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ int main(void)
     int a = 2;
     int b = 3;
     ::swap( a, b );
-    std::cout << "a = " << a << ", b = " << b << std::endl;
-    std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-    std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+    std::cout << "a= " << a << ", b= " << b << std::endl;
+    std::cout << "min(a, b )= " << ::min(a, b ) << std::endl;
+    std::cout << "max(a, b )= " << ::max(a, b ) << std::endl;
     std::string c = "chaine1";
     std::string d = "chaine2";
     ::swap(c, d);
-    std::cout << "c = " << c << ", d = " << d << std::endl;
-    std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-    std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+    std::cout << "c= " << c << ", d= " << d << std::endl;
+    std::cout << "min(c, d )= " << ::min(c, d ) << std::endl;
+    std::cout << "max(c, d )= " << ::max(c, d ) << std::endl;
     return 0;
 }

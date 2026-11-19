@@ -15,25 +15,35 @@
 # include <ctime>
 # include "iter.hpp"
 
-void addition(std::string &a)
+void alterstr(std::string &a)
 {
     a = "hi";
 }
 template <typename T> void printValue(T val) {
     std::cout << val << std::endl;
 }
+void addition(int &a)
+{
+    a = a + 1;
+}
 
 int main(void)
 {
-	std::string a[] = {"Hiii", "uhm", "UHHH"};
-	::iter(a, 2, addition);
-	for (int i = 0 ;i < 3; i++)
-	{
-		std::cout << a[i] <<std::endl;
-	}
-	std::cout << std::endl;
+	std::string a[] = {"test", "test", "test"};
+	::iter(a, 2, alterstr);
 	::iter(a, 3, printValue<const std::string&>);
-	std::cout << std::endl;
-	::iter(a, 3, printValue< std::string&>);
+
+	int b[] = {1,2,3};
+	::iter(b, 3, addition);
+	::iter(b, 3, printValue<const int&>);
+
+	const std::string ca[] = {"const", "stays", "same"};
+	::iter(ca, 3, printValue<const std::string&>);
+	// ::iter(ca, 3, alterstr);
+
+	const int cb[] = {10, 20, 30};
+	::iter(cb, 3, printValue<const int&>);
+	// ::iter(cb, 3, addition);
+
 	return 0;
 }
