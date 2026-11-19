@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/10 12:17:57 by nfakih            #+#    #+#             */
-/*   Updated: 2026/10/10 12:53:06 by nfakih           ###   ########.fr       */
+/*   Updated: 2026/10/10 13:43:30 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,9 @@ unsigned int Span<T>::getN()
 template <typename T>
 void Span<T>::addNumber(int num)
 {
-	
+    if (container.size() >= N)
+        throw SpanIsEmpty();
+	container.push_back(num);
 }
 
 template <typename T>

@@ -1,4 +1,4 @@
-NAME = easyfind
+NAME = span
 
 SRC =  main.cpp
 OBJ = $(SRC:.cpp=.o)

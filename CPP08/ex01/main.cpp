@@ -3,46 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 14:11:08 by nour              #+#    #+#             */
-/*   Updated: 2026/09/21 17:10:18 by nfakih           ###   ########.fr       */
+/*   Updated: 2026/10/10 13:44:39 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <iostream>
 # include <cstdlib>
 # include <ctime>
-# include "easyfind.hpp"
+# include "Span.hpp"
 # include "vector"
 # include "list"
 # include "deque"
 # include "stack"
 # include "queue"
 
-int main(void)
-{
 
-    std::vector<int> vec;
-    vec.push_back(10);
-    vec.push_back(20);
-    vec.push_back(30);
-	std::cout<<::easyfind(vec, 10)<<std::endl;
-	
-	std::list<float> list1;
-	list1.push_back(1.5f);
-	list1.push_front(0.5f);
-	std::cout<<::easyfind(vec, 2)<<std::endl;
-	
-	std::stack<int> stack1;
-	stack1.push(5);
-	stack1.push(10);
-	std::cout<<::easyfind(vec, 10)<<std::endl;
-	
-	std::priority_queue<int> pq1;
-	pq1.push(30);
-	pq1.push(10);
-	pq1.push(50); 
-	std::cout<<::easyfind(vec, 10)<<std::endl;
+int main()
+{
+    std::cout << "--- 1. Testing Constructors ---" << std::endl;
+    Span<int> sp(5);
+    std::cout << "Span size N is: " << sp.getN() << std::endl;
+
+    std::cout << "\n--- 2. Testing addNumber ---" << std::endl;
+    try 
+    {
+        sp.addNumber(6);
+        sp.addNumber(3);
+        sp.addNumber(17);
+        sp.addNumber(9);
+        sp.addNumber(11);
+        std::cout << "Successfully added 5 numbers!" << std::endl;
+        
+        // This 6th add should trigger your exception
+        std::cout << "Attempting to add a 6th number..." << std::endl;
+        sp.addNumber(42); 
+    }
+    catch (const std::exception& e)
+    {
+        std::cout << "Caught Exception: " << e.what() << std::endl;
+    }
+
+    std::cout << "\n--- 3. Testing Copy Constructor & Assignment ---" << std::endl;
+    Span<int> spCopy(sp);
+    std::cout << "Copied Span size N is: " << spCopy.getN() << std::endl;
+
+    Span<int> spAssign;
+    spAssign = sp;
+    std::cout << "Assigned Span size N is: " << spAssign.getN() << std::endl;
+
+    std::cout << "\n--- 4. Destruction Phase ---" << std::endl;
     return 0;
 }

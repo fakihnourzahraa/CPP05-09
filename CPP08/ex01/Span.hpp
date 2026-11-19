@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nfakih <nfakih@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nour <nour@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 13:03:11 by nour              #+#    #+#             */
-/*   Updated: 2026/10/10 12:45:12 by nfakih           ###   ########.fr       */
+/*   Updated: 2026/10/10 13:45:58 by nour             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <iostream>
 # include <cstdlib>
 # include <ctime>
-# include "easyfind.hpp"
 # include "vector"
 # include "list"
 # include "deque"
@@ -28,7 +27,7 @@ class Span
 {
     private:
 	unsigned int N;
-	template <typename T> cont;
+	template <T> container;
 
     public:
 	Span();
